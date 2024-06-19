@@ -1,7 +1,7 @@
 name: gen_nasm_toc
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - '**.md'
 jobs:
