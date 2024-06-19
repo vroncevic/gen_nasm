@@ -1,7 +1,7 @@
 name: gen_nasm_python3_build
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - 'gen_nasm/**'
       - 'MANIFEST.in'
@@ -9,7 +9,7 @@ on:
       - 'setup.cfg'
       - 'setup.py'
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - 'gen_nasm/**'
       - 'MANIFEST.in'
