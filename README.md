@@ -133,6 +133,16 @@ Generator structure
             └── gen_nasm_run.py
 ```
 
+### Code coverage
+
+| Name | Stmts | Miss | Cover |
+|------|-------|------|-------|
+| `gen_nasm/__init__.py` | 71 | 12 | 83% |
+| `gen_nasm/pro/__init__.py` | 59 | 2 | 97% |
+| `gen_nasm/pro/read_template.py` | 53 | 2 | 96% |
+| `gen_nasm/pro/write_template.py` | 60 | 3 | 95% |
+| **Total** | 243 | 19 | 92% |
+
 ### Docs
 
 [![Documentation Status](https://readthedocs.org/projects/gen_nasm/badge/?version=latest)](https://gen-nasm.readthedocs.io/en/latest/?badge=latest)

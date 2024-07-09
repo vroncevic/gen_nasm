@@ -21,7 +21,7 @@ Info
 '''
 
 import sys
-from typing import List, Dict
+from typing import List, Dict, Optional
 from datetime import date
 from os import getcwd, chmod, mkdir
 from os.path import exists
@@ -76,7 +76,7 @@ class WriteTemplate(FileCheck):
     def write(
         self,
         templates: List[Dict[str, str]],
-        pro_name: str | None,
+        pro_name: Optional[str],
         verbose: bool = False
     ) -> bool:
         '''
@@ -92,8 +92,8 @@ class WriteTemplate(FileCheck):
             :rtype: <bool>
             :exceptions: ATSTypeError | ATSValueError
         '''
-        error_msg: str | None = None
-        error_id: int | None = None
+        error_msg: Optional[str] = None
+        error_id: Optional[int] = None
         error_msg, error_id = self.check_params([
             ('list:templates', templates), ('str:pro_name', pro_name)
         ])

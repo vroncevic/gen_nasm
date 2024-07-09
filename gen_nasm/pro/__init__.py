@@ -22,7 +22,7 @@ Info
 
 import sys
 from os.path import dirname, realpath
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 try:
     from ats_utilities.config_io.file_check import FileCheck
@@ -42,7 +42,7 @@ __author__ = 'Vladimir Roncevic'
 __copyright__ = '(C) 2024, https://vroncevic.github.io/gen_nasm'
 __credits__: List[str] = ['Vladimir Roncevic', 'Python Software Foundation']
 __license__ = 'https://github.com/vroncevic/gen_nasm/blob/dev/LICENSE'
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 __maintainer__ = 'Vladimir Roncevic'
 __email__ = 'elektron.ronca@gmail.com'
 __status__ = 'Updated'
@@ -84,8 +84,8 @@ class GenNASMPro(FileCheck, ProConfig, ProName):
         verbose_message(
             verbose, [f'{self._GEN_VERBOSE.lower()} init generator']
         )
-        self._reader: ReadTemplate | None = ReadTemplate(verbose)
-        self._writer: WriteTemplate | None = WriteTemplate(verbose)
+        self._reader: Optional[ReadTemplate] = ReadTemplate(verbose)
+        self._writer: Optional[WriteTemplate] = WriteTemplate(verbose)
         current_dir: str = dirname(realpath(__file__))
         pro_structure: str = f'{current_dir}{self._PRO_STRUCTURE}'
         self.check_path(pro_structure, verbose)
@@ -95,40 +95,40 @@ class GenNASMPro(FileCheck, ProConfig, ProName):
             yml2obj = Yaml2Object(pro_structure)
             self.config = yml2obj.read_configuration()
 
-    def get_reader(self) -> ReadTemplate | None:
+    def get_reader(self) -> Optional[ReadTemplate]:
         '''
             Gets template reader.
 
             :return: Template reader object | None
-            :rtype: <ReadTemplate> | <NoneType>
+            :rtype: <Optional[ReadTemplate]>
             :exceptions: None
         '''
         return self._reader
 
-    def get_writer(self) -> WriteTemplate | None:
+    def get_writer(self) -> Optional[WriteTemplate]:
         '''
             Gets template writer.
 
             :return: Template writer object | none
-            :rtype: <WriteTemplate> | <NoneType
+            :rtype: <Optional[WriteTemplate]>
             :exceptions: None
         '''
         return self._writer
 
-    def gen_pro(self, pro_name: str | None, verbose: bool = False) -> bool:
+    def gen_pro(self, pro_name: Optional[str], verbose: bool = False) -> bool:
         '''
             Generates module file.
 
             :param pro_name: Project name
-            :type pro_name: <str>
+            :type pro_name: <Optional[str]>
             :param verbose: Enable/Disable verbose option
             :type verbose: <bool>
             :return: boolean status, True (success) | False
             :rtype: <bool>
             :exceptions: ATSTypeError | ATSValueError
         '''
-        error_msg: str | None = None
-        error_id: int | None = None
+        error_msg: Optional[str] = None
+        error_id: Optional[int] = None
         error_msg, error_id = self.check_params([
             ('str:pro_name', pro_name)
         ])
