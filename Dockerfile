@@ -1,4 +1,4 @@
-# Copyright 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
+# Copyright 2024 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -50,7 +50,6 @@ RUN mkdir /gen_nasm/
 RUN mkdir /tests/
 COPY gen_nasm /gen_nasm/
 COPY setup.py /
-COPY setup.cfg /
 COPY pyproject.toml /
 COPY MANIFEST.in /
 COPY README.md /
@@ -63,7 +62,6 @@ RUN python3 -m build --no-isolation --wheel
 RUN pip3 install /dist/gen_nasm-*-py3-none-any.whl
 RUN rm -rf /gen_nasm/
 RUN rm -rf dist/ tests/
-RUN rm -f setup.cfg
 RUN rm -f pyproject.toml
 RUN rm -f MANIFEST.in
 RUN rm -f setup.py
