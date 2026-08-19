@@ -7,7 +7,16 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   gen_nasm.pro
+   gen_nasm.core
+   gen_nasm.setup
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gen_nasm.engine
 
 Module contents
 ---------------

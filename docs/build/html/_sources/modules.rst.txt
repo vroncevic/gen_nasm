@@ -5,3 +5,4 @@ gen_nasm
    :maxdepth: 4
 
    gen_nasm
+   main
