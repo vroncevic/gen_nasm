@@ -117,46 +117,45 @@ Tool structure
 ```bash
     gen_nasm/
          ├── core/
-         │   ├── __init__.py
-         │   ├── model/
-         │   │   ├── __init__.py
-         │   │   └── project_setup.py
-         │   └── service/
-         │       ├── engine.py
-         │       ├── __init__.py
-         │       ├── iservice.py
-         │       └── isubprocessor.py
+         │   ├── __init__.py
+         │   ├── model/
+         │   │   ├── __init__.py
+         │   │   └── project_setup.py
+         │   └── service/
+         │       ├── engine.py
+         │       ├── __init__.py
+         │       ├── iservice.py
+         │       └── isubprocessor.py
          ├── engine.py
          ├── infrastructure/
-         │   ├── cli/
-         │   │   ├── engine.py
-         │   │   ├── icli.py
-         │   │   ├── __init__.py
-         │   │   └── setup/
-         │   │       ├── bundle.py
-         │   │       ├── dep_validator.py
-         │   │       ├── dependencies.py
-         │   │       ├── factory.py
-         │   │       ├── __init__.py
-         │   │       ├── keys.py
-         │   │       ├── opt_validator.py
-         │   │       ├── options.py
-         │   │       ├── registry.py
-         │   │       └── validator.py
-         │   ├── command/
-         │   │   ├── command.py
-         │   │   ├── gen_nasm_command_definition.py
-         │   │   ├── gen_nasm_command_executor.py
-         │   │   ├── icommand_definition.py
-         │   │   ├── icommand_executor.py
-         │   │   └── __init__.py
-         │   ├── config/
-         │   │   ├── gen_nasm.cfg
-         │   │   ├── gen_nasm.logo
-         │   │   ├── scheme.json
-         │   │   └── templates.tgz
-         │   ├── __init__.py
-         │   └── subprocessor.py
+         │   ├── cli/
+         │   │   ├── engine.py
+         │   │   ├── icli.py
+         │   │   ├── __init__.py
+         │   │   └── setup/
+         │   │       ├── bundle.py
+         │   │       ├── dep_validator.py
+         │   │       ├── dependencies.py
+         │   │       ├── factory.py
+         │   │       ├── __init__.py
+         │   │       ├── keys.py
+         │   │       ├── opt_validator.py
+         │   │       ├── options.py
+         │   │       ├── registry.py
+         │   │       └── validator.py
+         │   ├── command/
+         │   │   ├── command.py
+         │   │   ├── gen_nasm_command_definition.py
+         │   │   ├── gen_nasm_command_executor.py
+         │   │   ├── icommand_definition.py
+         │   │   ├── icommand_executor.py
+         │   │   └── __init__.py
+         │   ├── config/
+         │   │   ├── gen_nasm.cfg
+         │   │   ├── gen_nasm.logo
+         │   │   ├── scheme.json
+         │   │   └── templates.tgz
+         │   └── subprocessor.py
          ├── __init__.py
          ├── py.typed
          └── setup/
@@ -171,7 +170,7 @@ Tool structure
              ├── registry.py
              └── validator.py
 
-       10 directories, 45 files
+     10 directories, 44 files
 ```
 </details>
 
@@ -196,42 +195,41 @@ Tool structure
 | `gen_nasm/core/model/__init__.py` | 9 | 0 | 100%|
 | `gen_nasm/core/model/project_setup.py` | 14 | 0 | 100%|
 | `gen_nasm/core/service/__init__.py` | 9 | 0 | 100%|
-| `gen_nasm/core/service/engine.py` | 27 | 3 | 89%|
-| `gen_nasm/core/service/iservice.py` | 16 | 2 | 88%|
-| `gen_nasm/core/service/isubprocessor.py` | 16 | 2 | 88%|
+| `gen_nasm/core/service/engine.py` | 27 | 0 | 100%|
+| `gen_nasm/core/service/iservice.py` | 14 | 0 | 100%|
+| `gen_nasm/core/service/isubprocessor.py` | 14 | 0 | 100%|
 | `gen_nasm/engine.py` | 57 | 0 | 100%|
-| `gen_nasm/infrastructure/__init__.py` | 8 | 0 | 100%|
 | `gen_nasm/infrastructure/cli/__init__.py` | 9 | 0 | 100%|
-| `gen_nasm/infrastructure/cli/engine.py` | 39 | 7 | 82%|
-| `gen_nasm/infrastructure/cli/icli.py` | 16 | 2 | 88%|
+| `gen_nasm/infrastructure/cli/engine.py` | 39 | 0 | 100%|
+| `gen_nasm/infrastructure/cli/icli.py` | 14 | 0 | 100%|
 | `gen_nasm/infrastructure/cli/setup/__init__.py` | 9 | 0 | 100%|
-| `gen_nasm/infrastructure/cli/setup/bundle.py` | 22 | 1 | 95%|
-| `gen_nasm/infrastructure/cli/setup/dep_validator.py` | 28 | 0 | 100%|
+| `gen_nasm/infrastructure/cli/setup/bundle.py` | 22 | 0 | 100%|
+| `gen_nasm/infrastructure/cli/setup/dep_validator.py` | 36 | 0 | 100%|
 | `gen_nasm/infrastructure/cli/setup/dependencies.py` | 18 | 0 | 100%|
-| `gen_nasm/infrastructure/cli/setup/factory.py` | 32 | 0 | 100%|
+| `gen_nasm/infrastructure/cli/setup/factory.py` | 35 | 0 | 100%|
 | `gen_nasm/infrastructure/cli/setup/keys.py` | 26 | 0 | 100%|
-| `gen_nasm/infrastructure/cli/setup/opt_validator.py` | 28 | 0 | 100%|
+| `gen_nasm/infrastructure/cli/setup/opt_validator.py` | 36 | 0 | 100%|
 | `gen_nasm/infrastructure/cli/setup/options.py` | 15 | 0 | 100%|
-| `gen_nasm/infrastructure/cli/setup/registry.py` | 21 | 0 | 100%|
-| `gen_nasm/infrastructure/cli/setup/validator.py` | 35 | 0 | 100%|
+| `gen_nasm/infrastructure/cli/setup/registry.py` | 24 | 0 | 100%|
+| `gen_nasm/infrastructure/cli/setup/validator.py` | 43 | 0 | 100%|
 | `gen_nasm/infrastructure/command/__init__.py` | 9 | 0 | 100%|
 | `gen_nasm/infrastructure/command/command.py` | 16 | 0 | 100%|
-| `gen_nasm/infrastructure/command/gen_nasm_command_definition.py` | 24 | 1 | 96%|
-| `gen_nasm/infrastructure/command/gen_nasm_command_executor.py` | 21 | 2 | 90%|
-| `gen_nasm/infrastructure/command/icommand_definition.py` | 15 | 0 | 100%|
-| `gen_nasm/infrastructure/command/icommand_executor.py` | 14 | 1 | 93%|
-| `gen_nasm/infrastructure/subprocessor.py` | 56 | 19 | 66%|
+| `gen_nasm/infrastructure/command/gen_nasm_command_definition.py` | 24 | 0 | 100%|
+| `gen_nasm/infrastructure/command/gen_nasm_command_executor.py` | 21 | 0 | 100%|
+| `gen_nasm/infrastructure/command/icommand_definition.py` | 14 | 0 | 100%|
+| `gen_nasm/infrastructure/command/icommand_executor.py` | 13 | 0 | 100%|
+| `gen_nasm/infrastructure/subprocessor.py` | 56 | 0 | 100%|
 | `gen_nasm/setup/__init__.py` | 9 | 0 | 100%|
-| `gen_nasm/setup/bundle.py` | 23 | 1 | 96%|
-| `gen_nasm/setup/dep_validator.py` | 28 | 0 | 100%|
+| `gen_nasm/setup/bundle.py` | 23 | 0 | 100%|
+| `gen_nasm/setup/dep_validator.py` | 36 | 0 | 100%|
 | `gen_nasm/setup/dependencies.py` | 19 | 0 | 100%|
-| `gen_nasm/setup/factory.py` | 45 | 1 | 98%|
-| `gen_nasm/setup/keys.py` | 27 | 1 | 96%|
-| `gen_nasm/setup/opt_validator.py` | 26 | 9 | 65%|
+| `gen_nasm/setup/factory.py` | 48 | 0 | 100%|
+| `gen_nasm/setup/keys.py` | 27 | 0 | 100%|
+| `gen_nasm/setup/opt_validator.py` | 34 | 0 | 100%|
 | `gen_nasm/setup/options.py` | 12 | 0 | 100%|
-| `gen_nasm/setup/registry.py` | 29 | 0 | 100%|
-| `gen_nasm/setup/validator.py` | 40 | 0 | 100%|
-| **Total** | 876 | 52 | 94% |
+| `gen_nasm/setup/registry.py` | 32 | 0 | 100%|
+| `gen_nasm/setup/validator.py` | 48 | 0 | 100%|
+| **Total** | 928 | 0 | 100% |
 
 </details>
 

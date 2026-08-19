@@ -37,7 +37,7 @@ __author__ = 'Vladimir Roncevic'
 __copyright__ = '(C) 2026, https://vroncevic.github.io/gen_nasm'
 __credits__ = ['Vladimir Roncevic', 'Python Software Foundation']
 __license__ = 'https://github.com/vroncevic/gen_nasm/blob/dev/LICENSE'
-__version__ = '1.0.5'
+__version__ = '1.0.4'
 __maintainer__ = 'Vladimir Roncevic'
 __email__ = 'elektron.ronca@gmail.com'
 __status__ = 'Updated'
@@ -84,14 +84,14 @@ class GenNasm(Base):
             self._cli = bundle.cli
 
             # Mark as initialized (all components initialized)
-            self._is_initialized = all([
+            self._is_initialized = all(
                 component.is_initialized() for component in [
                     bundle.base.option_manager,
                     bundle.service,
                     bundle.subprocessor,
                     self._cli
                 ] if component
-            ])
+            )
 
             # Setting up logger for tool engine
             self._logger = self.get_context().logger
@@ -103,10 +103,11 @@ class GenNasm(Base):
         except Exception as exc:
             stdout.write(f'❌ gen_nasm unexpected exception: {exc}!\n')
 
-    def process(self) -> bool:
+    def process(self, verbose: bool = False) -> bool:
         '''
             Processes the gen_nasm commands.
 
+            :param verbose: Verbose execution flag.
             :return: True if successful, False otherwise.
             :exceptions: None.
         '''
@@ -121,13 +122,13 @@ class GenNasm(Base):
                 if result.get("returncode") != 0:
                     self._logger.write_log(ERROR, f'❌ gen_nasm: {result.get("stderr") or "failed!"}')
                     return False
-                else:
-                    self._logger.write_log(INFO, '✅ gen_nasm: done!')
-                    self._logger.write_log(INFO, '✅ gen_nasm: exiting successfully!')
-                    return True
-            else:
-                self._logger.write_log(ERROR, '❌ gen_nasm: engine not initialized!')
-                return False
+
+                self._logger.write_log(INFO, '✅ gen_nasm: done!')
+                self._logger.write_log(INFO, '✅ gen_nasm: exiting successfully!')
+                return True
+
+            self._logger.write_log(ERROR, '❌ gen_nasm: engine not initialized!')
+            return False
 
         except (ATSValueError, ATSTypeError) as exc:
             self._logger.write_log(ERROR, f'❌ gen_nasm: {exc}!')

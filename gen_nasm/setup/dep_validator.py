@@ -23,8 +23,10 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 
-from ats_utilities.validation.check_type import istype
+
+from ats_utilities.exceptions import ATSValueError, ATSTypeError
 from ats_utilities.validation.check_value import not_none
+from ats_utilities.validation.check_type import istype
 
 from gen_nasm.setup.dependencies import GenNasmBundleDependencies
 from gen_nasm.setup.keys import GenNasmBundleKeys
@@ -33,7 +35,7 @@ __author__ = 'Vladimir Roncevic'
 __copyright__ = '(C) 2026, https://vroncevic.github.io/gen_nasm'
 __credits__ = ['Vladimir Roncevic', 'Python Software Foundation']
 __license__ = 'https://github.com/vroncevic/gen_nasm/blob/dev/LICENSE'
-__version__ = '1.0.5'
+__version__ = '1.0.4'
 __maintainer__ = 'Vladimir Roncevic'
 __email__ = 'elektron.ronca@gmail.com'
 __status__ = 'Updated'
@@ -47,6 +49,7 @@ class GenNasmBundleDependenciesValidator:
 
             :methods:
                 | validate - Validates the gen_nasm bundle dependencies.
+                | is_valid - Checks if the gen_nasm bundle dependencies is valid.
     '''
 
     @classmethod
@@ -75,3 +78,18 @@ class GenNasmBundleDependenciesValidator:
 
             not_none(attribute, ctx, msg_attr_name_none)
             istype(attribute, expected_type, ctx, msg_attr_name_istype)
+
+    @classmethod
+    def is_valid(cls, gennasmbundledependencies: GenNasmBundleDependencies) -> bool:
+        '''
+            Checks if the gennasmbundledependencies is valid.
+
+            :param gennasmbundledependencies: The gennasmbundledependencies to be checked.
+            :return: True if valid, False otherwise.
+        '''
+        try:
+            cls.validate(gennasmbundledependencies)
+            return True
+
+        except (ATSValueError, ATSTypeError):
+            return False

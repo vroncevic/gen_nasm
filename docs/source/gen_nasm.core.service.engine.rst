@@ -1,7 +1,7 @@
-gen\_nasm.pro.write\_template module
+gen\_nasm.core.service.engine module
 ====================================
 
-.. automodule:: gen_nasm.pro.write_template
+.. automodule:: gen_nasm.core.service.engine
    :members:
    :undoc-members:
    :show-inheritance:

@@ -23,8 +23,9 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 
-from ats_utilities.validation.check_type import istype
+from ats_utilities.exceptions import ATSValueError, ATSTypeError
 from ats_utilities.validation.check_value import not_none
+from ats_utilities.validation.check_type import istype
 
 from gen_nasm.setup.options import GenNasmBundleOptions
 from gen_nasm.setup.keys import GenNasmBundleKeys
@@ -33,7 +34,7 @@ __author__ = 'Vladimir Roncevic'
 __copyright__ = '(C) 2026, https://vroncevic.github.io/gen_nasm'
 __credits__ = ['Vladimir Roncevic', 'Python Software Foundation']
 __license__ = 'https://github.com/vroncevic/gen_nasm/blob/dev/LICENSE'
-__version__ = '1.0.5'
+__version__ = '1.0.4'
 __maintainer__ = 'Vladimir Roncevic'
 __email__ = 'elektron.ronca@gmail.com'
 __status__ = 'Updated'
@@ -47,6 +48,7 @@ class GenNasmBundleOptionsValidator:
 
             :methods:
                 | validate - Validates the gen_nasm bundle options.
+                | is_valid - Checks if the gen_nasm bundle options is valid.
     '''
 
     @classmethod
@@ -73,3 +75,18 @@ class GenNasmBundleOptionsValidator:
             attribute = options.get(attr_name)
 
             istype(attribute, expected_type, ctx, msg_attr_name_istype)
+
+    @classmethod
+    def is_valid(cls, gennasmbundleoptions: GenNasmBundleOptions) -> bool:
+        '''
+            Checks if the gennasmbundleoptions is valid.
+
+            :param gennasmbundleoptions: The gennasmbundleoptions to be checked.
+            :return: True if valid, False otherwise.
+        '''
+        try:
+            cls.validate(gennasmbundleoptions)
+            return True
+
+        except (ATSValueError, ATSTypeError):
+            return False

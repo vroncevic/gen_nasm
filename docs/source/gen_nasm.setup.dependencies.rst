@@ -1,7 +1,7 @@
-gen\_nasm.pro.read\_template module
+gen\_nasm.setup.dependencies module
 ===================================
 
-.. automodule:: gen_nasm.pro.read_template
+.. automodule:: gen_nasm.setup.dependencies
    :members:
    :undoc-members:
    :show-inheritance:

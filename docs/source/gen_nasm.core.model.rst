@@ -1,5 +1,5 @@
-gen\_nasm.pro package
-=====================
+gen\_nasm.core.model package
+============================
 
 Submodules
 ----------
@@ -7,13 +7,12 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
-   gen_nasm.pro.read_template
-   gen_nasm.pro.write_template
+   gen_nasm.core.model.project_setup
 
 Module contents
 ---------------
 
-.. automodule:: gen_nasm.pro
+.. automodule:: gen_nasm.core.model
    :members:
    :undoc-members:
    :show-inheritance:
